@@ -1,0 +1,60 @@
+<mat-card class="job-profile">
+    <mat-card-title>Job Profile (Reactive)</mat-card-title>
+    <mat-card-content>
+      <form class="jobProfile-form data-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+       <mat-form-field>
+        <input matInput 
+            type="text"
+            formControlName="jobPos"
+            placeholder="Job Position"
+        />
+
+        <mat-error *ngIf="jobPos.errors?.required">Job Position is required.</mat-error>
+        <mat-error *ngIf="jobPos.errors?.minlength">Must contain at least 5 characters.</mat-error>
+       </mat-form-field>
+       <mat-form-field>
+           <input matInput 
+            type="text"
+            formControlName="dept"
+            placeholder="Department"
+           />
+
+        <mat-error *ngIf="dept.errors?.required">Department is required.</mat-error>
+        <mat-error *ngIf="dept.errors?.minlength">Must contain at least 2 characters.</mat-error>
+       </mat-form-field>
+       <mat-form-field>
+           <input matInput 
+            type="number"
+            formControlName="salary"
+            placeholder="Monthly Salary"
+           />
+
+           <mat-error *ngIf="salary.errors?.required">Salary is required.</mat-error>
+           <mat-error *ngIf="salary.errors?.min">Salary is invalid.</mat-error>
+       </mat-form-field>
+       <mat-form-field>
+           <input matInput
+            type="number"
+            formControlName="wrkHrs"
+            placeholder="Working Hours / Week"
+           />
+
+           <mat-error *ngIf="wrkHrs.errors?.required">Working Hours is required.</mat-error>
+           <mat-error *ngIf="wrkHrs.errors?.min">Working Hours is invalid.</mat-error>
+       </mat-form-field>
+       <mat-form-field>
+           <input matInput 
+            type="text"
+            formControlName="dayOff"
+            placeholder="Day Off"
+            />
+
+            <mat-error *ngIf="dayOff.errors?.required">Day Off is required</mat-error>
+            <mat-error *ngIf="dayOff.errors?.minlength">Must contain at least 6 characters.</mat-error>
+       </mat-form-field>
+
+        <button mat-raised-button color="primary" [disabled]="!form.valid">Submit</button>
+        </form>
+    </mat-card-content>
+  </mat-card>
+  

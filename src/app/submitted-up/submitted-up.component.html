@@ -1,0 +1,47 @@
+<mat-card class ="up-info">
+    <mat-card-title>Submitted Information</mat-card-title>
+    <mat-card-content class="content">
+        <table>
+        <tr>
+            <td>
+                <label for="firstName">First Name:</label>
+            </td>
+            <td>
+                <input type="text" value="{{val['fName']}}" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="lastName">Last Name:</label>
+            </td>
+            <td>
+                <input type="text" value="{{val['lName']}}" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="email">Email:</label>
+            </td>
+            <td>
+                <input type="text" value="{{val['email']}}" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="phoneNum">Phone Number:</label>
+            </td>
+            <td>
+                <input type="text" value="{{val['pNum']}}" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="password">Password: </label>
+            </td>
+            <td>
+                <input type="text" value="{{val['password']}}" readonly>
+            </td>
+        </tr>                                            
+        </table>
+    </mat-card-content>
+</mat-card>

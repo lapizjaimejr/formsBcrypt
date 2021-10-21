@@ -1,0 +1,83 @@
+<mat-card class="user-profile">
+    <mat-card-title>User Profile (Template)</mat-card-title>
+    <mat-card-content>
+      <form class="userProfile-form data-form" (ngSubmit)="passInfo(userProfileForm)" #userProfileForm="ngForm">
+        <mat-form-field>
+            <input matInput
+                type="text"
+                name="firstName"
+                firstName                
+                [(ngModel)]="val.firstName"
+                placeholder="First Name" 
+                required
+                minlength="2"
+                #firstName ="ngModel"
+                [ngModelOptions] ="{updateOn: 'blur'}"                               
+            />
+            <mat-error *ngIf="firstName.errors?.required">First Name is required.</mat-error>
+            <mat-error *ngIf="firstName.errors?.minlength">First name must be at least 2 characters.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput
+                type="text"
+                name="lastName"
+                lastName
+                [(ngModel)]="val.lastName"
+                placeholder="Last Name"
+                required
+                minlength="2"
+                #lastName ="ngModel"
+                [ngModelOptions] ="{updateOn: 'blur'}"
+                />
+            <mat-error *ngIf="lastName.errors?.required">Last Name is required.</mat-error>
+            <mat-error *ngIf="lastName.errors?.minlength">Last name must be at least 2 characters.</mat-error>   
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput 
+                type="email"
+                name="email"
+                email
+                [(ngModel)]="val.email"
+                placeholder="Email"
+                required
+                #email ="ngModel"
+                [ngModelOptions] ="{updateOn: 'blur'}"            
+            />
+            <mat-error *ngIf="email.errors?.required">Email is required.</mat-error>
+            <mat-error *ngIf="email.errors?.email">Email is invalid.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput                 
+                type="text"
+                name="phone"
+                phone
+                [(ngModel)]="val.pNum"
+                placeholder="Phone Number"
+                required
+                minlength="8"
+                #phone ="ngModel"
+                [ngModelOptions] ="{updateOn: 'blur'}"
+            />
+            <mat-error *ngIf="phone.errors?.required">Phone Number is required.</mat-error>
+            <mat-error *ngIf="phone.errors?.minlength">Phone Number must contain at least 8 characters.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput
+                type="password"
+                name="password"
+                password
+                [(ngModel)]="val.password"
+                placeholder="Password"
+                required
+                minlength="6"
+                #password ="ngModel"
+                [ngModelOptions] ="{updateOn: 'blur'}"
+                />
+            <mat-error *ngIf="password.errors?.required">Password is required.</mat-error>
+            <mat-error *ngIf="password.errors?.minlength">Password must contain at least 6 characters.</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="!userProfileForm.valid">Submit</button>
+        </form>
+    </mat-card-content>
+  </mat-card>
+  
